@@ -1,0 +1,194 @@
+<!--Firstname : {{request.session.Firstname}}-->
+{% load static %}
+<!--[if IE 8]><html lang="en-US" class="no-js lt-ie9"><![endif]-->
+<!--[if IE 9]><html lang="en-US" class="no-js ie9"><![endif]-->
+<!--[if (gt IE 9)|!(IE)]><!--><html lang="en-US" class="no-js"><!--<![endif]-->
+<head>
+	<title>PFA</title>
+	<meta http-equiv="content-type" content="text/html; charset=utf-8">
+	<meta http-equiv="X-UA-Compatible" content="chrome=1">
+	<meta name="heartbeat" content="twilio">
+	<meta name="csrfToken" content="5e72b9d4d709b836f3755b3b16fae52b134f7b2ced13a804bac476e9766269e0">
+	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+	<meta name="msvalidate.01" content="3D12095F1193FB34A99AEC3A6839D3C1">
+	<meta name="p:domain_verify" content="461cef7d1c33614f6741f1219779b382">
+	<meta name="theme-color" content="#F22F46">
+	<meta property="twitter:account_id" content="15936194">
+	<meta name="referrer" content="origin-when-cross-origin">
+
+	<!-- Paste team owns and understands fonts section -->
+	<link rel="preconnect" href="https://fonts.gstatic.com">
+	<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+	<link rel="preconnect" href="https://assets.twilio.com" />
+	<link rel="stylesheet" href="https://assets.twilio.com/public_assets/paste-fonts/main-1.2.0/fonts.css">
+	<link href="https://plus.google.com/102140742001641246827" rel="publisher">
+	<link rel="shortcut icon" href="{% static 'assets/img/BPM1.jpg' %}">
+	<link rel="apple-touch-icon" href="//assets.twilio.com/public_assets/console-js/2.12.0/images/favicons/Twilio_57.png">
+	<link rel="apple-touch-icon" sizes="72x72" href="//assets.twilio.com/public_assets/console-js/2.12.0/images/favicons/Twilio_72.png">
+	<link rel="apple-touch-icon" sizes="114x114" href="//assets.twilio.com/public_assets/console-js/2.12.0/images/favicons/Twilio_114.png">
+
+    <link rel="stylesheet" type="text/css" href="//assets.twilio.com/public_assets/console-js/2.12.0/css/bootstrap.css">
+
+	<link rel="stylesheet" type="text/css" href="//cloud.typography.com/6230892/752864/css/fonts.css">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lekton">
+
+	<script type="application/javascript">
+		performanceCreateMark('SG:platformStyles');
+	</script>
+
+		<link rel="stylesheet" type="text/css" href="https://static0.twilio.com/bundles/console-core.css">
+
+		<link rel="stylesheet" type="text/css" href="https://assets.twilio.com/public_assets/try-twilio/1.18.13/css/try-twilio.css">
+
+	<script type="application/javascript">
+		performanceCreateMark('SG:downstreamStyles');
+	</script>
+    <style>
+        .card__right {
+            margin-bottom: 20px;
+        }
+        .card__left{
+            margin-bottom: 20px;
+        }
+        .container{
+            margin-bottom: 20px;
+        }
+    .message {
+        padding: 10px;
+        border-radius: 4px;
+        text-align: center;
+        font-size: 20px;
+        color: #333;
+    }
+    #signup-button {
+        box-shadow: none !important;
+    }
+    </style>
+</head>
+<body class="twilio acct-trial">
+	<script type="application/javascript">
+		performanceCreateMark('SG:platformHeadScripts');
+	</script>
+<div class="header">
+    <div class="top-bar">
+        <span class="button-text">Already have an account</span>
+        <a href="/login" class="button">Log In</a></div>
+    <div class="container">
+        <div class="logo">
+            <img class="logo" src="{% static 'assets/img/logopfa.jpg' %}" width="40" height="40" title="PFA">
+        </div>
+        <!--<h1 class="text-center">
+            Welcome to our website
+            <br>
+        </h1>-->
+    </div>
+</div>
+
+<div class="container">
+    <div class="card">
+
+<div class="card__left" id="card-left">
+    <div>
+        <dl class="value-prop"><dt>Avec notre siteweb vous pouvez suivre: </dt>
+            <dd>Votre fréquence cardiaque</dd>
+            <dd>Votr tension artérielle</dd>
+            <dd>Votre température corporelle</dd>
+            <dd>Recevoir des alertes et notifications</dd>
+            <dd>Télécharger des graphes et des tableaux</dd>
+        </dl>
+    </div>
+</div>
+
+<div class="card__right">
+    <form class="material-form" id="registration-form" action="{% url 'register' %}" method="POST" role="registration-form">
+    {% csrf_token %}
+    <div class="material-form-group">
+        <label for="FirstName">First Name *</label>
+        <input type="text" id="FirstName" name="fname" class="material-form-control sl_whiteout" tabindex="1" maxLength="255" />
+        <span class="help-block"><!--Empty-->&nbsp;</span>
+
+    </div>
+
+    <div class="material-form-group">
+
+        <label for="LastName">Last Name *</label>
+        <input type="text" id="LastName" name="lname" class="material-form-control sl_whiteout" tabindex="2" maxLength="255" />
+        <span class="help-block"><!--Empty-->&nbsp;</span>
+
+    </div>
+
+    <div class="material-form-group">
+
+        <label for="EmailAddr">Email *</label>
+        <input type="email" id="EmailAddr" name="email" class="material-form-control sl_whiteout" tabindex="4" maxLength="255" />
+        <span class="help-block"><!--Empty-->&nbsp;</span>
+
+    </div>
+
+    <div class="material-form-group">
+    <div class="reveal-password-toggle" tabindex="0">Show</div>
+    <label for="Passwde">Password *</label>
+    <input type="password" id="Passwde" name="password" class="material-form-control sl_whiteout" tabindex="5" maxLength="255" />
+    <span class="help-block"><!--Empty-->&nbsp;</span>
+    <span class="link-block show-pw-guidelines-mobile">Guidelines</span>
+</div>
+
+<script>
+    // Retrieve the reference of the "Show" button for password field
+    var showPasswordToggle1 = document.querySelector('.reveal-password-toggle');
+    // Retrieve the reference of the password input field
+    var passwordInput = document.getElementById('Passwde');
+
+    // Add an event listener for the click event on the "Show" button for password field
+    showPasswordToggle1.addEventListener('click', function() {
+        // Change the type of the password input field to "text" if it's currently hidden
+        if (passwordInput.type === 'password') {
+            passwordInput.type = 'text';
+        } else {
+            passwordInput.type = 'password';
+        }
+    });
+</script>
+
+<div class="material-form-group">
+    <div class="reveal-password-toggle" tabindex="0">Show</div>
+    <label for="Passwd">Confirm password: *</label>
+    <input type="password" id="Passwd" name="cpassword" class="material-form-control sl_whiteout" tabindex="5" maxLength="255" />
+    <span class="help-block"><!--Empty-->&nbsp;</span>
+    <span class="link-block show-pw-guidelines-mobile">Guidelines</span>
+</div>
+
+<script>
+    // Retrieve the reference of the "Show" button for confirm password field
+    var showPasswordToggle2 = document.querySelectorAll('.reveal-password-toggle')[1];
+    // Retrieve the reference of the confirm password input field
+    var confirmPasswordInput = document.getElementById('Passwd');
+
+    // Add an event listener for the click event on the "Show" button for confirm password field
+    showPasswordToggle2.addEventListener('click', function() {
+        // Change the type of the confirm password input field to "text" if it's currently hidden
+        if (confirmPasswordInput.type === 'password') {
+            confirmPasswordInput.type = 'text';
+        } else {
+            confirmPasswordInput.type = 'password';
+        }
+    });
+</script>
+
+<div>
+    <button id="signup-button" type="submit" class="m-button" data-loading-text="<i class='icon icon-spinner icon-spin'></i>" tabindex="10">
+        Sign Up
+    </button>
+    <div class="message">
+        <h4>{{msg}}</h4>
+    </div>
+</div>
+
+
+</form>
+</div>
+
+    </div>
+</div>
+</body>
+</html>
